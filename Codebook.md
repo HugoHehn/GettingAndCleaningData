@@ -193,7 +193,7 @@ Final steps to produce "Merged and tidied data.csv" file:
 
 19) Columns "volunteerid" and "activity" in merged data frame converted to factors using as.factor() in R.
 
-20) Merged data frame saved to CSV using write.csv() in R.
+20) Merged data frame saved using write.table() in R.
 
 Final steps to produce "Summarized averages.csv" file:
 
@@ -203,4 +203,4 @@ Final steps to produce "Summarized averages.csv" file:
 
 23) Averages of each variable produced for each "volunteerid" and "activity" value using dcast() function.
 
-24) Summarized data frame saved to CSV using write.csv() in R.
+24) Summarized data frame saved using write.table() in R.

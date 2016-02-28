@@ -49,51 +49,86 @@ These signals were used to estimate variables of the feature vector for each pat
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 tBodyAcc-XYZ
+
 tGravityAcc-XYZ
+
 tBodyAccJerk-XYZ
+
 tBodyGyro-XYZ
+
 tBodyGyroJerk-XYZ
+
 tBodyAccMag
+
 tGravityAccMag
+
 tBodyAccJerkMag
+
 tBodyGyroMag
+
 tBodyGyroJerkMag
+
 fBodyAcc-XYZ
+
 fBodyAccJerk-XYZ
+
 fBodyGyro-XYZ
+
 fBodyAccMag
+
 fBodyAccJerkMag
+
 fBodyGyroMag
+
 fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
 
 mean(): Mean value
+
 std(): Standard deviation
+
 mad(): Median absolute deviation 
+
 max(): Largest value in array
+
 min(): Smallest value in array
+
 sma(): Signal magnitude area
+
 energy(): Energy measure. Sum of the squares divided by the number of values. 
+
 iqr(): Interquartile range 
+
 entropy(): Signal entropy
+
 arCoeff(): Autorregresion coefficients with Burg order equal to 4
+
 correlation(): correlation coefficient between two signals
+
 maxInds(): index of the frequency component with largest magnitude
+
 meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+
 skewness(): skewness of the frequency domain signal 
+
 kurtosis(): kurtosis of the frequency domain signal 
+
 bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+
 angle(): Angle between to vectors.
 
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
 gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean"
 
+tBodyAccMean
+
+tBodyAccJerkMean
+
+tBodyGyroMean
+
+tBodyGyroJerkMean"
 
 
 ## Data transformations carried out to original data set
@@ -105,13 +140,17 @@ Units of each variable are intact from the original data. The transformation ste
 Data from activity_labels.txt:
 
 1) Variable names converted to lowercase using tolower() function in R
+
 2) Underscores removed in variable names using gsub() function in R
+
 3) Column names changed to "activitynumber and "activitylabel"
 
 Data from features.txt:
 
 4) Variable names converted to lowercase using tolower() function in R
+
 5) Parentheses and dashes removed in variable names using gsub() function in R
+
 6) Column names changed to "activitynumber and "activitylabel"
 
 Data from y_train.txt:
@@ -121,6 +160,7 @@ Data from y_train.txt:
 Data from X_train.txt:
 
 8) Data subseted to only include variables corresponding to columns containing the strings "mean" or "std" in the features.txt file (located using the grep() function).
+
 9) Column names changed to corresponding names from features.txt file
 
 Data from subject_train.txt:
@@ -134,6 +174,7 @@ Data from y_test.txt:
 Data from X_test.txt:
 
 12) Data subseted to only include variables corresponding to columns containing the strings "mean" or "std" in the features.txt file (located using the grep() function).
+
 13) Column names changed to corresponding names from features.txt file
 
 Data from subject_test.txt:
@@ -143,15 +184,23 @@ Data from subject_test.txt:
 Final steps to produce "Merged and tidied data.csv" file:
 
 15) Transformed data from subject_train.txt, y_train.txt and X_train.txt merged into one data frame using cbind() function in R.
+
 16) Transformed data from subject_test.txt, y_test.txt and X_test.txt merged into one data frame using cbind() function in R.
+
 17) Merged data frames from step 15) and 16) merged into one data frame using rbind() in R.
+
 18) Labels from activity_labels.txt applied to merged data frame
+
 19) Columns "volunteerid" and "activity" in merged data frame converted to factors using as.factor() in R.
+
 20) Merged data frame saved to CSV using write.csv() in R.
 
 Final steps to produce "Summarized averages.csv" file:
 
 21) Reshape2 package loaded in R
+
 22) Merged data melted with melt() function using "volunteerid" and "activity" as ID variables.
+
 23) Averages of each variable produced for each "volunteerid" and "activity" value using dcast() function.
+
 24) Summarized data frame saved to CSV using write.csv() in R.

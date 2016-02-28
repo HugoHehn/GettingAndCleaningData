@@ -16,8 +16,8 @@ The script aims to compile the data on averages and standard deviations in the t
 
 The repository GettingAndCleaningData contains of three files:
 
-- "README.md"
-- 
-- "Codebook.md" (contains details on the original dataset and a detailed step-by-step descriptions of the data transformations carried out by the "run_analysis" script)
-- 
-- "run_analysis.R" (R script that tidies 
+1) "README.md"
+
+2) "Codebook.md" (contains details on the original dataset and a detailed step-by-step descriptions of the data transformations carried out by the "run_analysis" script)
+
+3) "run_analysis.R" (R script that tidies 

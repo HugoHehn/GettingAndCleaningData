@@ -72,7 +72,7 @@ merge[,2] <- act_labels[merge[,2],2]
 merge[,1] <- as.factor(merge[,1])
 merge[,2] <- as.factor(merge[,2])
 
-write.table(merge, "Merged and tidied data", row.name = FALSE)
+write.table(merge, "Merged and tidied data")
 
 ## Melt and summarize averages for the merged data frame in a separate data frame
 ## Write data to file
@@ -81,4 +81,4 @@ library(reshape2)
 melt <- melt(merge, id=c("volunteerid", "activity"))
 summary <- dcast(melt, volunteerid + activity ~ variable, mean)
 
-write.table(summary,"Summarized averages", row.name = FALSE)
+write.table(summary,"Summarized averages")
